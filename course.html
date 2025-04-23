@@ -149,7 +149,7 @@
         <footer class="container-fluid">
             <div class="container pb-5">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 col-sm-12">
                         <img src="assets/logo.png" alt="logo">
                         <p style="text-align: justify;font-size: 15px;">We provides tutorials and interview questions of
                             all technology like java tutorial, android,
@@ -229,7 +229,7 @@
                             <a href="#">PRIVACY POLICY</a>
                         </p>
                     </div>
-                    <div class="col-md-6 col-lg-2">
+                    <div class="col-md-6 col-lg-2 col-sm-12">
                         <h5 class="mb-4">Tutorials</h5>
                         <a class="btn btn-link">Java</a>
                         <a class="btn btn-link">Data Structures</a>
@@ -242,7 +242,7 @@
                         <a class="btn btn-link">jQuery Tutorial </a>
                         <a class="btn btn-link">Spring Tutorial</a>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3 col-sm-12">
                         <h5 class="mb-4">Interview Questions</h5>
                         <a class="btn btn-link">Microsoft </a>
                         <a class="btn btn-link">Amazon </a>
@@ -255,7 +255,7 @@
                         <a class="btn btn-link">Tcs </a>
                         <a class="btn btn-link">Infosys </a>
                     </div>
-                    <div class="col-md-6 col-lg-2">
+                    <div class="col-md-6 col-lg-2 col-sm-12">
                         <h5 class="mb-4">Online Compiler</h5>
                         <a class="btn btn-link">C </a>
                         <a class="btn btn-link">R </a>
@@ -281,13 +281,29 @@
             </div>
         </footer>
 
-        <script>
-            document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
-        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
             crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $(window).resize(function () {
+                    if ($(window).width() < 560) {
+                        $('#user-email').hide();
+                    }
+                    else {
+                        $('#user-email').show();
+                    }
+                });
+                $(window).resize();
+            });
+        </script>
+
+        <script>
+            document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
+        </script>
     </body>
 
 </html>

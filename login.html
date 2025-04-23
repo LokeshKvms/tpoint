@@ -24,6 +24,18 @@
 
     <body>
 
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="loginToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Login Successful</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    You have successfully logged in!
+                </div>
+            </div>
+        </div>
+
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
                 <h2 class="text-center mb-4">Login</h2>
@@ -37,8 +49,13 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" id="password" name="password" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-dark w-100">Submit</button>
+                    <button type="submit" class="btn btn-dark w-100 mt-2">Submit</button>
                 </form>
+
+                <div class="mt-3 text-center">
+                    <small>Don't have an account?</small>
+                    <a href="register.html" class="btn btn-link text-decoration-none text-success">Register here</a>
+                </div>
             </div>
         </div>
 
@@ -62,7 +79,13 @@
                         success: function (response) {
                             localStorage.setItem('token', response.token);
                             localStorage.setItem('mail', JSON.stringify(email));
-                            window.location.href = "course.html";
+
+                            var toast = new bootstrap.Toast(document.getElementById('loginToast'));
+                            toast.show();
+
+                            setTimeout(function () {
+                                window.location.href = "course.html";
+                            }, 1500);
                         },
                         error: function (error) {
                             console.log(error);
