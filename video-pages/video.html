@@ -56,6 +56,9 @@
         </div>
         <div class="container">
             <h1 class="section-heading" id="video-title">........</h1>
+            <button onclick="history.back()" class="btn btn-dark rounded-pill px-4 py-2" style="margin-top: 20px;">
+                ← Back
+            </button>
             <div class="video-container">
                 <iframe id="video-frame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -196,6 +199,7 @@
         </footer>
 
         <script>
+            document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
             const urlParams = new URLSearchParams(window.location.search);
             const videoLink = urlParams.get('video');
             const topicTitle = urlParams.get('topic');
