@@ -168,6 +168,7 @@
                         contentType: "application/json",
                         success: function (response) {
                             localStorage.setItem('token', response.token);
+                            localStorage.setItem('mail', JSON.stringify(email));
                             var toast = new bootstrap.Toast(document.getElementById('registerToast'));
                             toast.show();
 
