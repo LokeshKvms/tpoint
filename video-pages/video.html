@@ -24,7 +24,12 @@
 
         <!-- jQuery and DataTables JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <title>Introduction to Python - Video</title>
+        <script>
+            if (!localStorage.getItem('token')) {
+                window.location.href = "../login.html";
+            }
+        </script>
+        <title>IVideos</title>
     </head>
 
     <body>
@@ -50,10 +55,9 @@
             </div>
         </div>
         <div class="container">
-            <h1 class="section-heading">Introduction to Python</h1>
+            <h1 class="section-heading" id="video-title">........</h1>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/K5KVEU3aaeQ?si=syf2c0XLrOEpEswY"
-                    frameborder="0" allowfullscreen></iframe>
+                <iframe id="video-frame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <footer class="container-fluid mt-5 w-100">
@@ -190,6 +194,19 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoLink = urlParams.get('video');
+            const topicTitle = urlParams.get('topic');
+
+            if (videoLink && topicTitle) {
+                document.getElementById('video-title').innerText = topicTitle;
+                document.getElementById('video-frame').src = videoLink;
+            } else {
+                document.getElementById('video-title').innerText = "Video not found";
+            }
+        </script>
 
     </body>
 
