@@ -40,7 +40,8 @@
                         </a>
                         <div class="d-flex align-items-center ms-auto">
                             <div class="d-flex align-items-center me-3">
-                                <i class="fas fa-user-circle" style="font-size: 30px;"></i>
+                                <i class="fas fa-user-circle" style="font-size: 30px; cursor: pointer;"
+                                    id="profile-icon"></i>
                                 <span class="ms-2" id="user-email">user@example.com</span>
                             </div>
 
@@ -303,6 +304,14 @@
 
         <script>
             document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
+        </script>
+        <script>
+            // When the profile icon is clicked, save the email to localStorage
+            $('#profile-icon').on('click', function () {
+                const email = $('#user-email').text().trim(); // Get the email displayed in the navbar
+                localStorage.setItem('user-email', email); // Save the email to localStorage
+                window.location.href = 'profile.html'; // Redirect to the profile page
+            });
         </script>
     </body>
 
