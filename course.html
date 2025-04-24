@@ -64,7 +64,7 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=python">
+                                <a href="choose-page.html?course=python">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/homeicon/python.png"
                                             alt="Python">
@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=selenium">
+                                <a href="choose-page.html?course=selenium">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/homeicon/selenium-python.png"
                                             alt="Selenium Python">
@@ -84,7 +84,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=html">
+                                <a href="choose-page.html?course=html">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/logo/html-tutorial.png"
                                             alt="HTML">
@@ -94,7 +94,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=css">
+                                <a href="choose-page.html?course=css">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/logo/css3.jpg" alt="CSS">
                                         <div class="course-name">CSS</div>
@@ -103,7 +103,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=javascript">
+                                <a href="choose-page.html?course=javascript">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/logo/javascripthome.png"
                                             alt="JavaScript">
@@ -113,7 +113,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=react">
+                                <a href="choose-page.html?course=react">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/homeicon/react.png" alt="React">
                                         <div class="course-name">React</div>
@@ -122,7 +122,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=nodejs">
+                                <a href="choose-page.html?course=nodejs">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/js/nodejs/images/nodejs-logo.png"
                                             alt="Node.js">
@@ -132,7 +132,7 @@
                             </div>
 
                             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                                <a href="course-pages/course-page.html?course=django">
+                                <a href="choose-page.html?course=django">
                                     <div class="item">
                                         <img src="https://images.tpointtech.com/images/homeicon/django.png"
                                             alt="Django">
@@ -147,11 +147,11 @@
         </div>
 
 
-        <footer class="container-fluid">
+        <footer class="container-fluid mt-5">
             <div class="container pb-5">
                 <div class="row">
-                    <div class="col-5 col-sm-12">
-                        <img src="assets/logo.png" alt="logo">
+                    <div class="col-5">
+                        <img src="../assets/logo.png" alt="logo">
                         <p style="text-align: justify;font-size: 15px;">We provides tutorials and interview questions of
                             all technology like java tutorial, android,
                             java frameworks</p>
@@ -230,7 +230,7 @@
                             <a href="#">PRIVACY POLICY</a>
                         </p>
                     </div>
-                    <div class="col-md-6 col-lg-2 col-sm-12">
+                    <div class="col-md-6 col-lg-2">
                         <h5 class="mb-4">Tutorials</h5>
                         <a class="btn btn-link">Java</a>
                         <a class="btn btn-link">Data Structures</a>
@@ -243,7 +243,7 @@
                         <a class="btn btn-link">jQuery Tutorial </a>
                         <a class="btn btn-link">Spring Tutorial</a>
                     </div>
-                    <div class="col-md-6 col-lg-3 col-sm-12">
+                    <div class="col-md-6 col-lg-3">
                         <h5 class="mb-4">Interview Questions</h5>
                         <a class="btn btn-link">Microsoft </a>
                         <a class="btn btn-link">Amazon </a>
@@ -256,7 +256,7 @@
                         <a class="btn btn-link">Tcs </a>
                         <a class="btn btn-link">Infosys </a>
                     </div>
-                    <div class="col-md-6 col-lg-2 col-sm-12">
+                    <div class="col-md-6 col-lg-2">
                         <h5 class="mb-4">Online Compiler</h5>
                         <a class="btn btn-link">C </a>
                         <a class="btn btn-link">R </a>
@@ -306,11 +306,10 @@
             document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
         </script>
         <script>
-            // When the profile icon is clicked, save the email to localStorage
             $('#profile-icon').on('click', function () {
-                const email = $('#user-email').text().trim(); // Get the email displayed in the navbar
-                localStorage.setItem('user-email', email); // Save the email to localStorage
-                window.location.href = 'profile.html'; // Redirect to the profile page
+                const email = $('#user-email').text().trim();
+                localStorage.setItem('user-email', email);
+                window.location.href = 'profile.html';
             });
         </script>
     </body>
