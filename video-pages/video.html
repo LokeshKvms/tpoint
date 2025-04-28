@@ -16,21 +16,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-        <!-- DataTable CSS -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 
-        <!-- Custom CSS -->
         <link rel="stylesheet" href="../assets/css/video-pages.css">
         <link rel="stylesheet" href="../assets/css/footer.css">
         <link rel="stylesheet" href="../assets/css/course-pages.css">
 
-        <!-- jQuery and DataTables JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            if (!localStorage.getItem('token')) {
-                window.location.href = "../login.html";
-            }
-        </script>
         <title>IVideos</title>
     </head>
 
@@ -200,19 +192,7 @@
             </div>
         </footer>
 
-        <script>
-            document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
-            const urlParams = new URLSearchParams(window.location.search);
-            const videoLink = urlParams.get('video');
-            const topicTitle = urlParams.get('topic');
-
-            if (videoLink && topicTitle) {
-                document.getElementById('video-title').innerText = topicTitle;
-                document.getElementById('video-frame').src = videoLink;
-            } else {
-                document.getElementById('video-title').innerText = "Video not found";
-            }
-        </script>
+        <script src="../assets/js/video.js"></script>
 
     </body>
 

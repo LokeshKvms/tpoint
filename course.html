@@ -7,11 +7,7 @@
         <meta name="author" content="lokesh">
         <meta name="description" content="A quick tech stop">
         <title>Courses</title>
-        <script>
-            if (!localStorage.getItem('token')) {
-                window.location.href = "login.html";
-            }
-        </script>
+        <script src="assets/js/session-check.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -290,28 +286,7 @@
             crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                $(window).resize(function () {
-                    if ($(window).width() < 560) {
-                        $('#user-email').hide();
-                    }
-                    else {
-                        $('#user-email').show();
-                    }
-                });
-                $(window).resize();
-            });
-        </script>
-
-        <script>
-            document.getElementById('user-email').textContent = JSON.parse(localStorage.getItem('mail')) || 'user@example.com';
-            $('#profile-icon').on('click', function () {
-                const email = $('#user-email').text().trim();
-                localStorage.setItem('user-email', email);
-                window.location.href = 'profile.html';
-            });
-        </script>
+        <script src="assets/js/course.js"></script>
     </body>
 
 </html>
