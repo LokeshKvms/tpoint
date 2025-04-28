@@ -164,11 +164,11 @@
                     $.ajax({
                         url: "https://sampledev.pythonanywhere.com/api/students/",
                         type: "POST",
-                        data: JSON.stringify(data),
+                        data: JSON.stringify(data), 
                         contentType: "application/json",
                         success: function (response) {
                             localStorage.setItem('token', response.token);
-                            localStorage.setItem('mail', JSON.stringify(email));
+                            localStorage.setItem('mail', JSON.stringify(data.email));
                             var toast = new bootstrap.Toast(document.getElementById('registerToast'));
                             toast.show();
 
