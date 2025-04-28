@@ -1,7 +1,3 @@
-if (!localStorage.getItem("token")) {
-  window.location.href = "../login.html";
-}
-
 document.getElementById("user-email").textContent =
   JSON.parse(localStorage.getItem("mail")) || "user@example.com";
 const urlParams = new URLSearchParams(window.location.search);

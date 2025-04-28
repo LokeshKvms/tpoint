@@ -22,8 +22,13 @@
         <link rel="stylesheet" href="../assets/css/footer.css">
         <link rel="stylesheet" href="../assets/css/course-pages.css">
 
+        <script>if (!localStorage.getItem("token")) {
+                window.location.href = "../login.html";
+            }
+        </script>
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <title>IVideos</title>
+        <title>Videos</title>
     </head>
 
     <body>

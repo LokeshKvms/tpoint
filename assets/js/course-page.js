@@ -1,7 +1,3 @@
-if (!localStorage.getItem("token")) {
-  window.location.href = "../login.html";
-}
-
 const urlParams = new URLSearchParams(window.location.search);
 const course = urlParams.get("course");
 
@@ -492,9 +488,7 @@ function renderCourseData(courseData) {
                 <td>${item.description}</td>
                 <td><a href="/video-pages/video.html?video=${encodeURIComponent(
                   item.videoLink
-                )}&topic=${encodeURIComponent(
-      item.topic
-    )}" class="btn btn-sm btn-outline-success">Watch <i class="fas fa-play-circle"></i></a></td>
+                )}&topic=${encodeURIComponent(item.topic)}" class="btn btn-sm btn-outline-success">Watch <i class="fas fa-play-circle"></i></a></td>
             `;
     tableBody.appendChild(row);
   });
@@ -514,8 +508,8 @@ if (course && coursesData[course]) {
 } else {
   document.getElementById("course-title").innerText = "Course not found";
 }
-function goTest() {
-  window.location.href = `../course-pages/quiz-page.html?course=${course}`;
-}
+// function goTest() {
+//   window.location.href = `../course-pages/quiz-page.html?course=${course}`;
+// }
 document.getElementById("user-email").textContent =
   JSON.parse(localStorage.getItem("mail")) || "user@example.com";
